@@ -8,17 +8,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**Controller responsabil cu gestionarea enpoint-urilor legate de user*/
 @RestController
 public class UserController {
 
     private final UserRepository userRepository;
     private final ParkingLotRepository parkingLotRepository;
 
+    /**constructor*/
     public UserController(UserRepository userRepository, ParkingLotRepository parkingLotRepository) {
         this.userRepository = userRepository;
         this.parkingLotRepository = parkingLotRepository;
     }
 
+    /**Functie respnsabila cu afisarea profilului unui user*/
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserProfile(@PathVariable Long id) {
         return userRepository.findById(id)
@@ -26,6 +29,7 @@ public class UserController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**Functie responsabila cu afisarea parcarilor unui parking manager*/
     @GetMapping("/managers/{id}/lots")
     public List<ParkingLot> getManagerLots(@PathVariable Long id) {
         return parkingLotRepository.findByManagerId(id);

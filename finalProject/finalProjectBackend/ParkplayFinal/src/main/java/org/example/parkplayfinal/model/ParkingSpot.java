@@ -3,6 +3,7 @@ package org.example.parkplayfinal.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**Resprezinta un loc de parcare asociat unei parcari*/
 @Data
 @NoArgsConstructor
 public class ParkingSpot {

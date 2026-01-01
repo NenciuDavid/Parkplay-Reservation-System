@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
+/**Resprezinta o rezervare a unui loc de parcare dintr-o parcare pentru un user cu rol de driver*/
 @Data
 @NoArgsConstructor
 public class Reservation {

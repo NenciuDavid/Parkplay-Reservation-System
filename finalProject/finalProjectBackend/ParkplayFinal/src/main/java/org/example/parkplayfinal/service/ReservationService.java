@@ -9,7 +9,7 @@ import org.example.parkplayfinal.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-
+/**Serviciul care se ocupa cu logica rezervarilor, validarea si verificarea eventualelor suprapuneri*/
 @Service
 public class ReservationService {
 
@@ -17,6 +17,7 @@ public class ReservationService {
     private final ParkingSpotRepository spotRepository;
     private final UserRepository userRepository;
 
+    /**constructor*/
     public ReservationService(ReservationRepository reservationRepository,
                               ParkingSpotRepository spotRepository,
                               UserRepository userRepository) {
@@ -25,6 +26,7 @@ public class ReservationService {
         this.userRepository = userRepository;
     }
 
+    /**Functie responsabila cu creearea rezervarilor si validarea acesteia dupa urmatoarele reguli: validarea intervalului orar, verificarea existentei locului si a soferului si verificarea eventualelor suprapuneri*/
     public void createReservation(Long driverId, Long spotId, LocalDateTime start, LocalDateTime end) {
         if (start == null || end == null || !start.isBefore(end)) {
             throw new InvalidTimeSlotException("Interval invalid: Ora de start trebuie să fie înaintea orei de final.");

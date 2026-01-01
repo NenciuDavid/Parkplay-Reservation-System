@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**Reprezinta o parcare care contine locuri de parcare, are id, nume si locatie si este asociata unui user cu rolul de parking manager*/
 @Data
 @NoArgsConstructor
 public class ParkingLot {

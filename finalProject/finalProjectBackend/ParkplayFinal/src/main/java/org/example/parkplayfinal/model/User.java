@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**Reprezinta un utilizator care poate avea rol de parking manager sau de driver*/
 @Data
 @NoArgsConstructor
 public class User {
